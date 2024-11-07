@@ -9,37 +9,81 @@
     <h1>My Calculator</h1>
     <table border="1">
         <tr>
-            <td colspan="4" height = "50px" width = "50px" align="right">0</td>
+            <td colspan="4" height = "50px" width = "50px" align="right" id = 'result'>0</td>
         </tr>
         <tr>
-            <td align="center" width="40px" height = "40px">AC</td>
-            <td align="center" width="40px" height = "40px">+/-</td>
-            <td align="center" width="40px" height = "40px">%</td>
-            <td align="center" width="40px" height = "40px">/</td>
+            <td align="center" width="40px" height = "40px" id = 'clear'>AC</td>
+            <td align="center" width="40px" height = "40px" id = 'sign'>+/-</td>
+            <td align="center" width="40px" height = "40px" id = 'perc'>%</td>
+            <td align="center" width="40px" height = "40px" id = 'div'>/</td>
         </tr>
         <tr>
-            <td align="center" height = "40px">7</td>
-            <td align="center" height = "40px">8</td>
-            <td align="center" height = "40px">9</td>
-            <td align="center" height = "40px">x</td>
+            <td align="center" height = "40px" id = 'num7'>7</td>
+            <td align="center" height = "40px" id = 'num8'>8</td>
+            <td align="center" height = "40px" id = 'num9'>9</td>
+            <td align="center" height = "40px" id = 'mult'>*</td>
         </tr>
         <tr>
-            <td align="center" height = "40px">4</td>
-            <td align="center" height = "40px">5</td>
-            <td align="center" height = "40px">6</td>
-            <td align="center" height = "40px">-</td>
+            <td align="center" height = "40px" id = 'num4'>4</td>
+            <td align="center" height = "40px" id = 'num5'>5</td>
+            <td align="center" height = "40px" id = 'num6'>6</td>
+            <td align="center" height = "40px" id = 'sub'>-</td>
         </tr>
         <tr>
-            <td align="center" height = "40px">1</td>
-            <td align="center" height = "40px">2</td>
-            <td align="center" height = "40px">3</td>
-            <td align="center" height = "40px">+</td>
+            <td align="center" height = "40px" id = 'num1'>1</td>
+            <td align="center" height = "40px" id = 'num2'>2</td>
+            <td align="center" height = "40px" id = 'num3'>3</td>
+            <td align="center" height = "40px" id = 'add'>+</td>
         </tr>
         <tr>
-            <td align="center" colspan = "2" height = "40px">0</td>
-            <td align="center" height = "40px">.</td>
-            <td align="center" height = "40px">=</td>
+            <td align="center" colspan = "2" height = "40px" id = 'num0'>0</td>
+            <td align="center" height = "40px" id = 'decimal'>.</td>
+            <td align="center" height = "40px" id = 'equal'>=</td>
         </tr>
     </table>
+
+    <script>
+
+        function printSymbol(e) {
+            let result = document.getElementById("result") ;
+            let obj = e.target ;
+            if (result.textContent == '0')
+                result.textContent = obj.textContent ;
+            else 
+                result.textContent += obj.textContent ;
+        }
+        
+        let num0 = document.getElementById("num0")
+        let num1 = document.getElementById("num1") ;
+        let num2 = document.getElementById("num2") ;
+        let num3 = document.getElementById("num3") ;
+        let num4 = document.getElementById("num4") ;
+        let num5 = document.getElementById("num5") ;
+        let num6 = document.getElementById("num6") ;
+        let num7 = document.getElementById("num7") ;
+        let num8 = document.getElementById("num8") ;
+        let num9 = document.getElementById("num9") ;
+        let add = document.getElementById("add") ;
+        let mult = document.getElementById("mult") ;
+        let sub = document.getElementById("sub") ;
+        let decimal = document.getElementById("decimal") ;
+
+        num0.addEventListener("click" , printSymbol) ;
+        num1.addEventListener("click" , printSymbol) ;
+        num2.addEventListener("click" , printSymbol) ;
+        num3.addEventListener("click" , printSymbol) ;
+        num4.addEventListener("click" , printSymbol) ;
+        num5.addEventListener("click" , printSymbol) ;
+        num6.addEventListener("click" , printSymbol) ;
+        num7.addEventListener("click" , printSymbol) ;
+        num8.addEventListener("click" , printSymbol) ;
+        num9.addEventListener("click" , printSymbol) ;
+        add.addEventListener("click" , printSymbol)  ;
+        mult.addEventListener("click" , printSymbol) ;
+        sub.addEventListener("click" , printSymbol) ;
+        decimal.addEventListener("click" , printSymbol) ;
+      
+    </script>
 </body>
+
 </html>
